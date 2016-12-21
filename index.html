@@ -1,0 +1,285 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = 1050, user-scalable = no" />
+    <link rel="stylesheet" href="libs/styles.css" />
+    <link rel="stylesheet" href="libs/animate.min.css" />
+    <style type="text/css">
+
+        /*begin */
+        html{height: 100%;}
+        body{background:url("img/BG.jpg") center center no-repeat;
+            background-size: cover;}
+        .wrap{position: absolute;width: 800px;height: 628px;top: 50%;margin-top: -314px;left: 50%;margin-left: -400px;  }
+        .logo{position:absolute;left:0;top:0;background-color:#000;width:65px;height:65px;}
+        .music-wrap{position:absolute;left:77px;top:0;background:#000;width:703px;height:65px;}
+        .inner{width: 100%;height: 100%;position: relative;}
+        .book-wrap{position:absolute;left:0px;top:84px;width:800px;height:544px;}
+        .hor-divider{display:inline-block;width:100%;height:65px;background:url("img/divider.png") no-repeat center center #000;}
+        .hor-divider .level-1,.hor-divider .level-2{display:block;height:24px;line-height:24px;text-transform:uppercase;color:#fff;font-size:20px;text-align:center;width:100%;}
+        .hor-divider .level-1{margin-top:7px;}
+        .hor-divider .level-2{font-size:16px;}
+        .logo{width:71px;}
+        .logo.hor-divider .level-2{font-size:20px;}
+        .music-wrap .title{border-right:1px solid #7f7f7f;float:left;width:71px;}
+        .music-dis{width:600px;float:left;}
+        .music-dis{width:600px;}
+        .music-name{height:45px;line-height:45px;background:#fff;color:#000;margin:10px 0 0 10px;font-size:18px;width:290px;}
+        .music-control{padding-top:18px;height:40px;width:300px;}
+        .nav-left{position:absolute;left:-76px;bottom:0;width:64px;}
+        .nav-left a,.tool-right a{width:64px;height:64px;margin-top:10px;text-decoration:none;border-radius:2px;border:1px solid rgba(124,72,72,0.65);}
+        .nav-left a .level-1,.tool-right a .level-1{font-size:16px;}
+        .nav-left a .level-2,.tool-right a .level-2{font-size:13px;transform:scale(0.8);width: 120%;margin-left: -10%;}
+        .nav-left a:hover,.tool-right a:hover{text-decoration:none;}
+        .tool-right{position:absolute;right:-76px;bottom:0;width:64px;}
+        #canvas{-webkit-transition-property:background-color;-webkit-transition-duration:.8s;-webkit-transition-timing-function:ease;}
+        .ft-right{position: absolute; left: 0; bottom: -80px; text-align: center; width: 100%;}
+        .ft-right a{color: #222;text-decoration: none; letter-spacing: 1px;text-shadow: 0px 0 1px #d3d0d0;}
+        .ft-right a:hover{color: #f00;}
+
+
+        .p-menu{position:absolute;width: 158px;height: 13px;cursor: pointer;display: none;}
+        .p2-0{left: 55px;top: 159px;}
+        .p2-1{left:55px;top:192px;height: 13px;}
+        .p2-2{left:55px;top:318px;height: 13px;}
+        .p2-3{left:55px;top:350px;height: 13px;}
+        .p2-4{left:55px;top:383px;height: 13px;}
+        .p2-5{left:55px;top:417px;height: 13px;}
+        .p2-6{left:55px;top:450px;height: 13px;}
+        .p2-7{left:55px;top:482px;height: 13px;}
+        .p2-8{left:297px;top:160px;height: 13px;}
+        .p2-9{left:297px;top:190px;height: 13px;}
+        .p2-10{left:297px;top:218px;height: 13px;}
+        .p2-11{left:297px;top:247px;height: 13px;}
+        .p2-12{left:297px;top:276px;height: 13px;}
+        .p2-13{left:297px;top:306px;height: 13px;}
+        .p2-14{left: 297px;top: 351px;height: 35px;width: 170px;}
+
+        .p2-15{left:55px;top:225px;height: 13px;}
+
+
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="logo hor-divider">
+        <span class="level-1">ARIA</span>
+        <span class="level-2">0902</span>
+    </div>
+    <div class="music-wrap clearfix">
+        <div class="title hor-divider">
+            <span class="level-1">音乐</span>
+            <span class="level-2">music</span>
+        </div>
+        <div class="music-dis clearfix">
+            <p class="pull-left music-name">
+            <marquee scrollamount="2" id="music-name"></marquee>
+            </p>
+            <div class="music-control pull-left">
+                <audio controls="" autoplay="true" loop="loop" id="music">
+                    <!--<source src="demo-audio.ogg">-->
+                    <source src="" >
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="book-wrap">
+        <div class="inner">
+            <!--fla/cover.html-->
+            <iframe src="fla/cover.html" frameborder="0" scrolling="no" width="100%" height="100%" id="canvas"></iframe>
+            <a class="p-menu p2-0" data-num="2"></a>
+            <a class="p-menu p2-1" data-num="3"></a>
+            <a class="p-menu p2-15" data-num="4"></a>
+            <a class="p-menu p2-2" data-num="5"></a>
+            <a class="p-menu p2-3" data-num="6"></a>
+            <a class="p-menu p2-4" data-num="7"></a>
+            <a class="p-menu p2-5" data-num="8"></a>
+            <a class="p-menu p2-6" data-num="9"></a>
+            <a class="p-menu p2-7" data-num="10"></a>
+            <a class="p-menu p2-8" data-num="11"></a>
+            <a class="p-menu p2-9" data-num="12"></a>
+            <a class="p-menu p2-11" data-num="13"></a>
+            <a class="p-menu p2-12" data-num="14"></a>
+            <a class="p-menu p2-13" data-num="15"></a>
+
+        </div>
+    </div>
+    <div class="nav-left">
+        <div class="inner">
+            <a href="javascript:;" data-id="0" class="book-cover hor-divider">
+                <span class="level-1">封面</span>
+                <span class="level-2">cover</span>
+            </a>
+            <a href="javascript:;" data-id="1" class="book-cover hor-divider">
+                <span class="level-1">目录</span>
+                <span class="level-2">content</span>
+            </a>
+            <a href="javascript:;" data-id="16" class="book-cover hor-divider">
+                <span class="level-1">封底</span>
+                <span class="level-2">b.cover</span>
+            </a>
+        </div>
+    </div>
+    <div class="tool-right">
+        <a href="javascript:;" class="book-prev hor-divider">
+            <span class="level-1">上一页</span>
+            <span class="level-2">pgup</span>
+        </a>
+        <a href="javascript:;" class="book-next hor-divider">
+            <span class="level-1">下一页</span>
+            <span class="level-2">pgdn</span>
+        </a>
+    </div>
+    <div class="ft-right"><a href="http://www.kuke.com" target="_blank">库客数字音乐图书馆:Copyright KUKE.com. All Rights Reserved</a></div>
+</div>
+
+<script src="libs/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+    var lists = {
+        0:{url:'cover.html',desc:'封面'},
+        1:{url:'menu.swf.html',desc:'目录'},
+        2:{url:'1.swf.html',desc:'',name:'凯尔特意境精选 伦敦德里歌调 Londonderry Air 专辑号:DPS24730',musicUrl:'music1'},
+        3:{url:'2.swf.html',desc:'凯尔特',name:'凯尔特意境精选 伦敦德里歌调 Londonderry Air 专辑号:DPS24730',musicUrl:'music1'},
+        4:{url:'3.swf.html',desc:'英国',name:'英国(奥运版本)Great Britain(Olympic version) 专辑号：8.225321',musicUrl:'music1'},
+        5:{url:'4.swf.html',desc:'大笨钟',name:'英国民歌--绿袖子(Greensleeves) 专辑号：8.990006',musicUrl:'music1'},
+        6:{url:'5.swf.html',desc:'伦敦塔桥',name:'英国民歌--绿袖子(Greensleeves) 专辑号：8.990006',musicUrl:'music1'},
+        7:{url:'6.swf.html',desc:'泰晤士河',name:'英国民歌--绿袖子(Greensleeves) 专辑号：8.990006',musicUrl:'music4'},
+        8:{url:'7.swf.html',desc:'眼',name:'英国民歌--绿袖子(Greensleeves) 专辑号：8.990006',musicUrl:'music4'},
+        9:{url:'8.swf.html',desc:'教堂',name:'英国民歌--绿袖子(Greensleeves) 专辑号：8.990006',musicUrl:'music4'},
+        10:{url:'9.swf.html',desc:'剑桥',name:'丹麦-格林纳达 英格兰 England(威风堂堂) 专辑号:8.3225321',musicUrl:'music9'},
+        11:{url:'10.swf.html',desc:'莎士比亚',name:'音乐/诗歌/散文:爱人的礼物 Twelfth Night,Act I Scene 1:If music be the food of love,play on...(Shakespeare) 专辑号:8.553619',musicUrl:'music10'},
+        12:{url:'11.swf.html',desc:'布里顿',name:'本杰明`布里顿:钢琴协奏曲/穿越约旦的约翰逊(组曲):托卡塔(很快且朝气蓬勃的快版) 专辑号:8.557197',musicUrl:'music11'},
+        13:{url:'13.swf.html',desc:'韦伯',name:'韦伯:Cats(Selections) 专辑号:8.990033',musicUrl:'music13'},
+        14:{url:'14.swf.html',desc:'披头士',name:'披头士 太阳出来了 专辑号:CI000287',musicUrl:'music14'},
+        15:{url:'cover_end.html',desc:'封面-end'}
+    };
+
+    var currentIndex = 0;//当前页码
+$(function(){
+    var $canvas = $('#canvas'),
+            $wrap = $('.wrap'),
+            music = document.getElementById('music'),
+            totalPage = 16,//总页数
+            MenuNum = 1,//目录页面
+            clickTimes = 0,//点击关闭次数
+            audioType = '.mp3',
+            $musicName = $('#music-name');//music type
+
+    var playMusic = function(param){
+        if(param.url){
+            music.setAttribute('src','music/'+param.url + audioType);
+            $musicName.text(param.name);
+        }else{
+            music.setAttribute('src','');
+            $musicName.text('');
+        }
+    }
+
+    window.playMusicParam = function(param){
+        if(param){
+            console.log('call playMusicBy param:',param);
+            playMusic(param);
+        }else{
+            console.log('call playMusicByPage:',currentIndex);
+            playMusic({name:lists[currentIndex].name,url:lists[currentIndex].musicUrl});
+        }
+
+
+    }
+
+
+    var setPageNum = function(num){
+
+        console.log(num);
+
+        currentIndex = parseInt(num,10);
+        $canvas.attr('src','fla/'+lists[currentIndex].url).addClass('fadeInRight animated').show();
+
+        //set music
+        if(lists[currentIndex].musicUrl){
+            playMusic({name:lists[currentIndex].name,url:lists[currentIndex].musicUrl});
+        }else{
+            playMusic({});
+        }
+
+        setTimeout(function(){
+            $canvas.removeClass('fadeInRight animated');
+        },800);
+        if(currentIndex==0){
+            $wrap.find('.tool-right .book-prev').hide();
+        }else{
+            $wrap.find('.tool-right .book-prev').show();
+        }
+
+        if(currentIndex==MenuNum){
+            $wrap.find('.p-menu').show();
+        }else{
+            $wrap.find('.p-menu').hide();
+        }
+
+        if(currentIndex==totalPage){
+            $wrap.find('.tool-right .book-next').hide();
+        }else{
+            $wrap.find('.tool-right .book-next').show();
+        }
+    }
+    $wrap.find('.tool-right .book-prev').hide();
+
+
+    $wrap.on('click','.p-menu',function(){
+        setPageNum(parseInt($(this).attr('data-num'),10));
+    });
+
+
+    $wrap.on('click','.nav-left a',function(){
+        var _this = $(this);
+        setPageNum(_this.attr('data-id'));
+    }).on('click','.tool-right .book-prev',function(){
+        setPageNum(currentIndex-1);
+    }).on('click','.tool-right .book-next',function(){
+        setPageNum(currentIndex+1);
+    }).on('click','.tool-right .book-close',function(){
+        clickTimes++;
+        if(clickTimes>3){
+            alert("无法关闭哦");
+            clickTimes=0;
+        }
+    });
+
+
+})
+
+    var nowMusic = null;
+
+    function showMusic(obj){
+        var param = {};
+        if(currentIndex==10){
+            if(obj.x>270 && obj.x<510 && obj.y>380 && obj.y<440){
+                param.name = '英国弦乐音乐姐:小广版 专辑:8.550331';
+                param.url = 'music9-1';
+            }
+            if(!param.url){
+                param.name = '丹麦-格林纳达 英格兰 England(威风堂堂) 专辑号:8.3225321';
+                param.url = 'music9';
+            }
+        }
+
+        if(nowMusic && nowMusic.url == param.url){
+            return;
+        }
+        nowMusic = param;
+        playMusicParam(param);
+
+    }
+
+</script>
+
+</body>
+</html>
